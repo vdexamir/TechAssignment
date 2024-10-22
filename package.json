@@ -1,0 +1,50 @@
+{
+  "name": "calendar-api",
+  "version": "1.0.0",
+  "description": "Calendar API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "__build": "node ./bin/compiler/build.js",
+    "__format": "node ./bin/formatter/format.js",
+    "__lint": "node ./bin/linter/lint.js",
+    "__test": "node ./bin/test/test.js",
+    "_build": "tsc && npm run __build",
+    "_build:release": "tsc && npm run __build --bundle --release",
+    "build": "npm run clean && npm run _build",
+    "build:release": "npm run clean && npm run _build:release",
+    "clean": "rimraf build coverage",
+    "format": "npm run __format",
+    "lint": "npm run __lint",
+    "lint:fix": "npm run __lint --fix",
+    "test": "npm run __test",
+    "test:coverage": "npm run __test --coverage",
+    "test:watch": "npm run __test --watch"
+  },
+  "author": "vladdexamir@gmail.com",
+  "engines": {
+    "node": "22.9.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@jest/globals": "29.7.0",
+    "@swc/core": "1.7.36",
+    "@swc/cli": "0.4.0",
+    "@swc/jest": "0.2.36",
+    "@types/node": "22.7.6",
+    "esbuild": "0.24.0",
+    "prettier": "3.3.3",
+    "typescript": "5.6.3",
+    "jest": "29.7.0",
+    "ts-jest": "29.2.5",
+    "rimraf": "6.0.1",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "@typescript-eslint/eslint-plugin": "7.7.1",
+    "@typescript-eslint/parser": "7.7.1",
+    "eslint-plugin-tsdoc": "0.2.17",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-workspaces": "0.10.0"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "plugins": [
+    "eslint-plugin-tsdoc",
+    "eslint-plugin-eslint-comments",
+    "@typescript-eslint",
+    "import",
+    "workspaces"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
+  ],
+  "ignorePatterns": ["**/build/*", "**/dist/*", "**/node_modules/*", "**/coverage/*"],
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "rules": {
+    "camelcase": "error",
+    "one-var-declaration-per-line": ["error", "always"],
+    "no-implicit-coercion": [
+      2,
+      {
+        "boolean": true
+      }
+    ],
+    "object-shorthand": ["error", "always"],
+    "prefer-spread": "error",
+    "prefer-arrow-callback": "error",
+    "eslint-comments/require-description": [
+      "warn",
+      {
+        "ignore": []
+      }
+    ],
+    "prefer-promise-reject-errors": "error",
+    "eqeqeq": "error",
+    "no-throw-literal": "error",
+    "curly": ["error", "all"],
+    "brace-style": ["error", "1tbs"],
+    "new-cap": [
+      "error",
+      {
+        "newIsCap": true
+      }
+    ],
+    "@typescript-eslint/array-type": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "parameter",
+        "format": null,
+        "modifiers": ["unused"],
+        "leadingUnderscore": "require"
+      },
+      {
+        "selector": "parameter",
+        "format": null,
+        "leadingUnderscore": "forbid"
+      }
+    ],
+    "tsdoc/syntax": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["*/build/*.js", "*/build/*", "*/dist/*.js", "*/dist/*"]
+      }
+    ],
+    "no-await-in-loop": "error",
+    "no-param-reassign": "warn",
+    "workspaces/no-relative-imports": "error",
+    "workspaces/require-dependency": "error"
+  },
+  "env": {
+    "node": true,
+    "es2023": true
+  }
+}
